@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Oops Tasks </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+
+    </head>
+    <body>
+
+        <!-- Q-1. Write a JavaScript program to create a class called "Person" with properties for name, age and country. Include a method to display the person's details. Create two instances of the 'Person' class and display their details. -->
+
+        <div class="container text-center mt-5">
+            <h1 class="mb-4">Person Details</h1>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <table class="table table-bordered table-striped mt-5">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <tbody id="personTableBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        class Person {
+            constructor(name, age, country) {
+                this.name = name;
+                this.age = age;
+                this.country = country;
+                console.log(`Person created: Name = ${name}, Age = ${age}, Country = ${country}`);
+            }
+
+            displayDetails() {
+                console.log(`Displaying details for ${this.name}`);
+                return `
+                    <tr>
+                        <td>${this.name}</td>
+                        <td>${this.age}</td>
+                        <td>${this.country}</td>
+                    </tr>
+                `;
+            }
+        }
+
+        const person1 = new Person('XYZ', 30, 'USA');
+        const person2 = new Person('PQR', 25, 'Canada');
+
+        function displayPersons() {
+            const tableBody = document.getElementById('personTableBody');
+            tableBody.innerHTML = person1.displayDetails() + person2.displayDetails();
+        }
+
+        displayPersons();
+        console.log('Persons displayed in table.');
+    </script>
+
+
+
+
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous">
+        </script>
+
+    </body>
+</html>
